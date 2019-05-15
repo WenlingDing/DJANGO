@@ -126,3 +126,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+import dj_database_url
+DATABASES = {'default': dj_database_url.parse('postgres://qcvbeopxtuuvwd:e56973e7ed309d20cd73499ac0dac09c563ce3f49c6eecaf057d091f20ba4509@ec2-54-225-106-93.compute-1.amazonaws.com:5432/d1abv5go6adncl')}
