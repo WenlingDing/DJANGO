@@ -25,7 +25,7 @@ SECRET_KEY = '09#zmcy7zcc(l92n_@sx)rb^yvk^9s_r*i*kn(7$pa)6bbz&o#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-project-wenling-wenlingding.c9users.io']
+ALLOWED_HOSTS = ['django-project-wenling-wenlingding.c9users.io','django-dwl.herokuapp.com']
 
 
 # Application definition
@@ -71,6 +71,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'tracker.wsgi.application'
+
 
 
 # Database
@@ -130,3 +131,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 import dj_database_url
 DATABASES = {'default': dj_database_url.parse('postgres://qcvbeopxtuuvwd:e56973e7ed309d20cd73499ac0dac09c563ce3f49c6eecaf057d091f20ba4509@ec2-54-225-106-93.compute-1.amazonaws.com:5432/d1abv5go6adncl')}
+
+import sys
+if 'test' in sys.argv:
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase'
+    }
