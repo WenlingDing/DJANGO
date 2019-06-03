@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{%block content %}
+<ul>
+    {% for key,value in cart.items %}
+    <li>{{value.product.title}}
+    <br>Quantity:{{value.qty}}
+    <br><a href={% url 'remove_from_cart_link' id=value.product.id %}>Remove from Cart</a></li>
+    {% endfor %}
+</ul>
+{%endblock%}
