@@ -113,7 +113,7 @@ def add_feature(request):
         if add_feature_form.is_valid():
             new_issue=Feature(user=request.user
                             )
-            new_issue = add_feature_form.save(commit=False)
+            new_issue = add_feature_form.save()
             return redirect('feature')
         else:
             return render(request, 'add_feature.html',{

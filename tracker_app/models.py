@@ -32,7 +32,6 @@ class Feature(models.Model):
         date = models.DateTimeField(auto_now_add=True)
         description = models.CharField(max_length=255, blank=False)
         paid = models.PositiveIntegerField(default=0.0)
-        # type = models.CharField(max_length=30, blank=False)
         upvote=models.IntegerField(default=0)
         status = models.ForeignKey(Status, on_delete=models.CASCADE, related_name='status_feature',null=True, blank=True)
         user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_feature', null=False)

@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'tracker.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-#DATABASES = {
+# DATABASES = {
 #   'default': {
 #       'ENGINE': 'django.db.backends.sqlite3',
 # }
-#}
+# }
 
 DATABASES = {'default': dj_database_url.parse('postgres://qcvbeopxtuuvwd:e56973e7ed309d20cd73499ac0dac09c563ce3f49c6eecaf057d091f20ba4509@ec2-54-225-106-93.compute-1.amazonaws.com:5432/d1abv5go6adncl')}
 
